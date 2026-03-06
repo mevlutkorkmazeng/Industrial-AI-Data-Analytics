@@ -45,3 +45,12 @@ fprintf('\n--- Diagnostic Feature Results ---\n');
 fprintf('Normal -> RMS: %.4f | Kurtosis: %.4f\n', rms_normal, kurt_normal);
 fprintf('Faulty -> RMS: %.4f | Kurtosis: %.4f\n', rms_faulty, kurt_faulty);
 
+%% 4. Automated Decision Logic (Basic AI Classifier)
+% Setting a threshold for predictive maintenance alerts
+rms_threshold = 0.15;
+
+if rms_faulty > rms_threshold
+    fprintf('\nSTATUS: [!!!] FAULT DETECTED. Maintenance Required.\n');
+else
+    fprintf('\nSTATUS: [OK] Motor is operating within healthy limits.\n');
+end
