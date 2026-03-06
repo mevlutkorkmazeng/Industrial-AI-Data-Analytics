@@ -40,4 +40,8 @@ rms_faulty = rms(faulty_vibration);
 kurt_normal = kurtosis(normal_vibration);
 kurt_faulty = kurtosis(faulty_vibration);
 
+% Displaying analysis results
+fprintf('\n--- Diagnostic Feature Results ---\n');
+fprintf('Normal -> RMS: %.4f | Kurtosis: %.4f\n', rms_normal, kurt_normal);
+fprintf('Faulty -> RMS: %.4f | Kurtosis: %.4f\n', rms_faulty, kurt_faulty);
 
