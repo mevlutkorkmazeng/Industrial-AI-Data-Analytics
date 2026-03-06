@@ -5,7 +5,7 @@ This project demonstrates an end-to-end **Condition Monitoring** and **Fault Dia
 ## 1. Exploratory Data Analysis (EDA)
 We analyze vibration signals in the time domain. By comparing a healthy motor with one having an inner race fault, we can visually identify high-amplitude impacts caused by the defect.
 
-![Time Domain Analysis](Motor%20Vibration%20Time-Domain%20Analysis.png)
+![Time Domain Analysis](images/Motor%20Vibration%20Time-Domain%20Analysis.png)
 
 ## 2. AI Feature Extraction & Comparison
 The raw vibration data is converted into statistical "features" that a Machine Learning model can understand. We specifically focus on:
