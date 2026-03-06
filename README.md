@@ -7,7 +7,7 @@ We analyze vibration signals in the time domain. By comparing a healthy motor wi
 
 ![Time Domain Analysis](images/Motor%20Vibration%20Time-Domain%20Analysis.png)
 
-## 2. AI Feature Extraction & Comparison
+## 2. AI Feature Extraction & Comparison 
 The raw vibration data is converted into statistical "features" that a Machine Learning model can understand. We specifically focus on:
 * **RMS (Root Mean Square):** Represents the overall energy of the vibration.
 * **Kurtosis:** Measures the "peakiness" of the signal to detect sharp impacts.
