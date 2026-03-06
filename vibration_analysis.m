@@ -55,30 +55,41 @@ else
     fprintf('\nSTATUS: [OK] Motor is operating within healthy limits.\n');
 end
 
-%% 6. AI Feature Table Visualization (Yapay Zeka Özellik Tablosu Görselleştirme)
-% Creating a table to display AI results directly on the figure
-% (Yapay zeka sonuçlarını doğrudan grafik üzerinde görüntülemek için bir tablo oluşturma)
 
-% Prepare data for the table
-% (Tablo için verileri hazırla)
-table_data = {
-    'Healthy (Normal)', sprintf('%.4f', rms_normal), sprintf('%.4f', kurt_normal);
-    'Faulty (Inner Race)', sprintf('%.4f', rms_faulty), sprintf('%.4f', kurt_faulty);
-};
+%% 6. AI Diagnostic Dashboard (Bar Chart Version)
+% Professional visualization of AI features using bar charts
+% (Yapay zeka özelliklerinin sütun grafikleriyle profesyonel görselleştirmesi)
 
-% Define column names
-% (Sütun adlarını tanımla)
-column_names = {'Motor State', 'RMS (Energy)', 'Kurtosis (Peakiness)'};
+figure(2);
+set(gcf, 'Name', 'AI Feature Analysis Dashboard', 'Color', 'w');
 
-% Create the table UI element on the existing figure
-% (Mevcut grafik üzerinde tablo UI öğesini oluştur)
-uitable(figure(1), 'Data', table_data, ...
-    'ColumnName', column_names, ...
-    'Units', 'Normalized', ...
-    'Position', [0.6 0.1 0.35 0.15], ... % Adjust position (x, y, width, height)
-    'RowName', []); % Remove row numbers
+% --- Subplot 1: RMS (Energy) Comparison ---
+subplot(1,2,1);
+bar_data_rms = [rms_normal, rms_faulty];
+b1 = bar(bar_data_rms, 'FaceColor', 'flat');
+b1.CData(1,:) = [0 0.5 0]; % Healthy -> Green
+b1.CData(2,:) = [0.8 0 0]; % Faulty -> Red
 
-% Save the final figure as an image for GitHub README
-% (GitHub README için final grafiğini bir resim olarak kaydet)
-saveas(gcf, 'analysis_results_plot.png');
-fprintf('\n>>> Final plot with AI table saved as analysis_results_plot.png <<<\n');
+title('Vibration Energy (RMS)', 'FontSize', 12);
+xticklabels({'Healthy', 'Faulty'});
+ylabel('Amplitude (g)');
+grid on;
+
+% --- Subplot 2: Kurtosis (Impact) Comparison ---
+subplot(1,2,2);
+bar_data_kurt = [kurt_normal, kurt_faulty];
+b2 = bar(bar_data_kurt, 'FaceColor', 'flat');
+b2.CData(1,:) = [0 0.5 0]; % Healthy -> Green
+b2.CData(2,:) = [0.8 0 0]; % Faulty -> Red
+
+title('Signal Impact (Kurtosis)', 'FontSize', 12);
+xticklabels({'Healthy', 'Faulty'});
+ylabel('Value');
+grid on;
+
+% --- Add a Main Title to the Dashboard ---
+sgtitle('AI-Based Motor Health Diagnosis Report', 'FontSize', 16, 'FontWeight', 'bold');
+
+% Save the dashboard as an image for GitHub
+saveas(gcf, 'ai_analysis_dashboard.png');
+fprintf('\n>>> AI Bar Chart Dashboard saved as ai_analysis_dashboard.png <<<\n');
