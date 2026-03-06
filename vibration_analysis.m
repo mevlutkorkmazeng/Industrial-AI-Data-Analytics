@@ -54,3 +54,31 @@ if rms_faulty > rms_threshold
 else
     fprintf('\nSTATUS: [OK] Motor is operating within healthy limits.\n');
 end
+
+%% 6. AI Feature Table Visualization (Yapay Zeka Özellik Tablosu Görselleştirme)
+% Creating a table to display AI results directly on the figure
+% (Yapay zeka sonuçlarını doğrudan grafik üzerinde görüntülemek için bir tablo oluşturma)
+
+% Prepare data for the table
+% (Tablo için verileri hazırla)
+table_data = {
+    'Healthy (Normal)', sprintf('%.4f', rms_normal), sprintf('%.4f', kurt_normal);
+    'Faulty (Inner Race)', sprintf('%.4f', rms_faulty), sprintf('%.4f', kurt_faulty);
+};
+
+% Define column names
+% (Sütun adlarını tanımla)
+column_names = {'Motor State', 'RMS (Energy)', 'Kurtosis (Peakiness)'};
+
+% Create the table UI element on the existing figure
+% (Mevcut grafik üzerinde tablo UI öğesini oluştur)
+uitable(figure(1), 'Data', table_data, ...
+    'ColumnName', column_names, ...
+    'Units', 'Normalized', ...
+    'Position', [0.6 0.1 0.35 0.15], ... % Adjust position (x, y, width, height)
+    'RowName', []); % Remove row numbers
+
+% Save the final figure as an image for GitHub README
+% (GitHub README için final grafiğini bir resim olarak kaydet)
+saveas(gcf, 'analysis_results_plot.png');
+fprintf('\n>>> Final plot with AI table saved as analysis_results_plot.png <<<\n');
