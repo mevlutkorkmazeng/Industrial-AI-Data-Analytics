@@ -42,6 +42,20 @@ To bridge the gap between simulation and real-world industrial application, the 
 By translating MATLAB models into efficient C functions, this project demonstrates a complete workflow for **Industrial AI**: 
 1. **Analyze** (MATLAB) -> 2. **Validate** (Simulation) -> 3. **Deploy** (Embedded C).
 
+## 6. Statistical Validation: Why AI?
+To prove the necessity of AI, we analyzed the raw data distribution versus the extracted feature space.
+
+![Deep Analysis](ai_deep_analysis_plot.png)
+
+### Analysis Breakdown:
+* **Data Overlap (Left):** Raw vibration signals show significant overlap between healthy and faulty states. Traditional amplitude monitoring would result in high false-alarm rates.
+* **Feature Space (Right):** By mapping data into the **RMS-Kurtosis plane**, we achieve clear linear separability. The black dashed line represents our **AI Decision Boundary**.
+
+| Approach | Reliability | Efficiency |
+| :--- | :---: | :---: |
+| Raw Signal Monitoring | Low (High Overlap) | Manual / Inefficient |
+| **AI Feature Engineering** | **High (Clear Clusters)** | **Automated / Precise** |
+
 ---
 **Author:** [Mevlut Korkmaz](https://github.com/mevlutkorkmazeng)  
 *Electrical and Electronics Engineering Student at Ege University*
