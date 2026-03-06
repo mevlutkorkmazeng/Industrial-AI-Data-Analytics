@@ -30,6 +30,18 @@ The system includes a rule-based classifier:
 - **Status:** If RMS > Threshold ➡️ **[!!!] FAULT DETECTED**
 - This logic enables 24/7 automated monitoring without human intervention.
 
+## 5. Hardware Implementation (C/Embedded)
+To bridge the gap between simulation and real-world industrial application, the diagnostic algorithms have been ported to **C code**. This implementation is optimized for microcontrollers such as **STM32**, enabling real-time edge processing.
+
+
+### Embedded Module Breakdown:
+* **`fault_detection.c`**: Contains the core mathematical engine for calculating **RMS** and **Kurtosis** from raw sensor buffers.
+* **`main_diagnostic.c`**: Implements the high-level application logic. It integrates with the **STM32 HAL (Hardware Abstraction Layer)** to trigger physical alerts (e.g., toggling a Red LED on GPIO PA5) when an anomaly is detected.
+
+### Transition from Simulation to Reality
+By translating MATLAB models into efficient C functions, this project demonstrates a complete workflow for **Industrial AI**: 
+1. **Analyze** (MATLAB) ➡️ 2. **Validate** (Simulation) ➡️ 3. **Deploy** (Embedded C).
+
 ---
 **Author:** [Mevlut Korkmaz](https://github.com/mevlutkorkmazeng)  
 *Electrical and Electronics Engineering Student at Ege University*
