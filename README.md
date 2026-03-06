@@ -27,7 +27,7 @@ Based on our AI-driven analysis, the system successfully differentiates between 
 ## 4. Automated Decision Logic
 The system includes a rule-based classifier:
 - **Threshold:** 0.15 RMS
-- **Status:** If RMS > Threshold ➡️ **[!!!] FAULT DETECTED**
+- **Status:** If RMS > Threshold -> **[!!!] FAULT DETECTED**
 - This logic enables 24/7 automated monitoring without human intervention.
 
 ## 5. Hardware Implementation (C/Embedded)
@@ -40,7 +40,7 @@ To bridge the gap between simulation and real-world industrial application, the 
 
 ### Transition from Simulation to Reality
 By translating MATLAB models into efficient C functions, this project demonstrates a complete workflow for **Industrial AI**: 
-1. **Analyze** (MATLAB) ➡️ 2. **Validate** (Simulation) ➡️ 3. **Deploy** (Embedded C).
+1. **Analyze** (MATLAB) -> 2. **Validate** (Simulation) -> 3. **Deploy** (Embedded C).
 
 ---
 **Author:** [Mevlut Korkmaz](https://github.com/mevlutkorkmazeng)  
