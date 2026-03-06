@@ -1,4 +1,4 @@
-# Industrial AI: Predictive Maintenance for Motor Bearings 🚀
+# Industrial AI: Predictive Maintenance for Motor Bearings 
 
 This project demonstrates an end-to-end **Condition Monitoring** and **Fault Diagnosis** pipeline. It uses signal processing and statistical feature extraction to detect early-stage motor failures using the CWRU Bearing Dataset.
 
