@@ -83,5 +83,9 @@ The following matrices confirm that our "AI Brain" makes zero mistakes:
 * **Zero False Negatives:** Every single fault is detected instantly.
 
 ---
-**Author:** [Mevlut Korkmaz](https://github.com/mevlutkorkmazeng)  
-*Electrical and Electronics Engineering Student at Ege University*
+## Authors
+
+**[Mevlut Korkmaz](https://github.com/mevlutkorkmazeng)** *Electrical and Electronics Engineering Student at Ege University*
+
+**[Ali Özdemir](https://github.com/aliozdemir-eng)** *Electrical and Electronics Engineering Student at Ege University*
+
