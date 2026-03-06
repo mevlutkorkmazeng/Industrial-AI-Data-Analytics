@@ -60,12 +60,8 @@ To prove the necessity of AI, we analyzed the raw data distribution versus the e
 ## 7. Machine Learning & AI Reliability
 To move beyond basic thresholds, we implemented a supervised learning workflow using the **MATLAB Classification Learner** app. This ensures the system can autonomously adapt to different motor conditions with high precision.
 
-### Feature Space & Data Distribution
-Before training, we analyzed how well our features (**RMS** and **Kurtosis**) separate healthy data from faulty data.
-
-![Deep Analysis](ai_deep_analysis_plot.png)
-
-* **Linear Separability:** The scatter plot (right) shows two distinct clusters with zero overlap, proving that our feature engineering is highly effective for this dataset.
+### Feature Space & Methodology
+As demonstrated in the **Statistical Validation (Section 6)**, our extracted features (**RMS** and **Kurtosis**) provide perfect **Linear Separability**. This distinct clustering allowed the machine learning models to define a clear decision boundary, ensuring 100% reliable classification without manual tuning.
 
 ### Data Preparation (`generate_training_data.m`)
 The training dataset was generated using a custom script that segments the raw vibration signals into labeled observations. This process is crucial for "teaching" the AI the difference between motor states.
