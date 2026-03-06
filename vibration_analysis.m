@@ -31,3 +31,11 @@ plot(faulty_vibration(1:1000), 'r');
 title('Faulty Motor State (Bearing Defect Detected)');
 xlabel('Samples'); ylabel('Amplitude (g)');
 grid on;
+
+%% 3. AI Feature Extraction (Statistical Analysis)
+% Calculating key indicators for the AI decision model
+rms_normal = rms(normal_vibration);
+rms_faulty = rms(faulty_vibration);
+
+kurt_normal = kurtosis(normal_vibration);
+kurt_faulty = kurtosis(faulty_vibration);
