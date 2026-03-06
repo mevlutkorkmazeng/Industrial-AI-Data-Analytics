@@ -56,6 +56,36 @@ To prove the necessity of AI, we analyzed the raw data distribution versus the e
 | Raw Signal Monitoring | Low (High Overlap) | Manual / Inefficient |
 | **AI Feature Engineering** | **High (Clear Clusters)** | **Automated / Precise** |
 
+
+## 7. Machine Learning & AI Reliability
+To move beyond basic thresholds, we implemented a supervised learning workflow using the **MATLAB Classification Learner** app. This ensures the system can autonomously adapt to different motor conditions with high precision.
+
+### Feature Space & Data Distribution
+Before training, we analyzed how well our features (**RMS** and **Kurtosis**) separate healthy data from faulty data.
+
+![Deep Analysis](ai_deep_analysis_plot.png)
+
+* **Linear Separability:** The scatter plot (right) shows two distinct clusters with zero overlap, proving that our feature engineering is highly effective for this dataset.
+
+### Data Preparation (`generate_training_data.m`)
+The training dataset was generated using a custom script that segments the raw vibration signals into labeled observations. This process is crucial for "teaching" the AI the difference between motor states.
+
+* **Method:** 120 samples (60 Healthy / 60 Faulty) were extracted.
+* **Script:** Detailed logic is available in [generate_training_data.m](./generate_training_data.m).
+
+### Model Performance & Validation
+We trained multiple classifiers, including **SVM (Support Vector Machines)**, **KNN**, and **Decision Trees**. Every model achieved **100% Validation Accuracy**.
+
+#### Confusion Matrix Analysis:
+The following matrices confirm that our "AI Brain" makes zero mistakes:
+
+| Sample Counts | True Positive Rates | Precision / FDR |
+| :---: | :---: | :---: |
+| ![Matrix 1](ai_confusion_matrix.png) | ![Matrix 2](ai_confusion_matrix2.png) | ![Matrix 3](ai_confusion_matrix3.png) |
+
+* **Zero False Positives:** The model never incorrectly flags a healthy motor as faulty.
+* **Zero False Negatives:** Every single fault is detected instantly.
+
 ---
 **Author:** [Mevlut Korkmaz](https://github.com/mevlutkorkmazeng)  
 *Electrical and Electronics Engineering Student at Ege University*
