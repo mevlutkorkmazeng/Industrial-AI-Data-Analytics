@@ -14,7 +14,7 @@ The raw vibration data is converted into statistical "features" that a Machine L
 
 The bar charts below clearly show that the **Faulty Motor** has significantly higher energy and impact levels compared to the **Healthy Motor**.
 
-![AI Feature Dashboard](AI%20Feature%20Analysis%20Dashboard.png)
+![AI Feature Dashboard](images/AI%20Feature%20Analysis%20Dashboard.png)
 
 ## 3. Diagnostic Results
 Based on our AI-driven analysis, the system successfully differentiates between motor states:
@@ -45,7 +45,7 @@ By translating MATLAB models into efficient C functions, this project demonstrat
 ## 6. Statistical Validation: Why AI?
 To prove the necessity of AI, we analyzed the raw data distribution versus the extracted feature space.
 
-![Deep Analysis](ai_deep_analysis_plot.png)
+![Deep Analysis](images/ai_deep_analysis_plot.png)
 
 ### Analysis Breakdown:
 * **Data Overlap (Left):** Raw vibration signals show significant overlap between healthy and faulty states. Traditional amplitude monitoring would result in high false-alarm rates.
@@ -77,7 +77,7 @@ The following matrices confirm that our "AI Brain" makes zero mistakes:
 
 | Sample Counts | True Positive Rates | Precision / FDR |
 | :---: | :---: | :---: |
-| ![Matrix 1](ai_confusion_matrix.png) | ![Matrix 2](ai_confusion_matrix2.png) | ![Matrix 3](ai_confusion_matrix3.png) |
+| ![Matrix 1](images/ai_confusion_matrix.png) | ![Matrix 2](images/ai_confusion_matrix2.png) | ![Matrix 3](images/ai_confusion_matrix3.png) |
 
 * **Zero False Positives:** The model never incorrectly flags a healthy motor as faulty.
 * **Zero False Negatives:** Every single fault is detected instantly.
